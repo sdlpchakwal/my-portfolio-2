@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Younas Ali | Professional Portfolio</title>
+    <meta name="description" content="Professional portfolio of Younas Ali, Educationist, Academic Manager, Computer Science Teacher, and Project Manager.">
+
+    <style>
+        /* =========================
+           GLOBAL STYLES
+        ========================== */
+        :root {
+            --bg: #08111f;
+            --bg-light: #0d1b2e;
+            --card: #122239;
+            --primary: #38bdf8;
+            --primary-dark: #0284c7;
+            --white: #f8fafc;
+            --text: #cbd5e1;
+            --muted: #94a3b8;
+            --border: rgba(255,255,255,0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--bg);
+            color: var(--white);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .section-title .small-title {
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            margin-top: 10px;
+        }
+
+        .section-title p {
+            color: var(--muted);
+            max-width: 650px;
+            margin: 15px auto 0;
+        }
+
+        /* =========================
+           NAVIGATION
+        ========================== */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(8,17,31,0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .navbar {
+            height: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 23px;
+            font-weight: bold;
+            color: var(--white);
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: var(--text);
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .menu-btn {
+            display: none;
+            border: none;
+            background: transparent;
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        /* =========================
+           BUTTONS
+        ========================== */
+        .btn {
+            display: inline-block;
+            padding: 13px 28px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 14px;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: #082032;
+        }
+
+        .btn-primary:hover {
+            background: #7dd3fc;
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            border: 1px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: #082032;
+            transform: translateY(-3px);
+        }
+
+        /* =========================
+           HERO SECTION
+        ========================== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 100px;
+            background:
+                radial-gradient(circle at 80% 20%, rgba(56,189,248,0.12), transparent 30%),
+                radial-gradient(circle at 10% 80%, rgba(2,132,199,0.08), transparent 30%);
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1.3fr 0.7fr;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .hero-text .badge {
+            display: inline-block;
+            border: 1px solid rgba(56,189,248,0.3);
+            color: var(--primary);
+            background: rgba(56,189,248,0.08);
+            padding: 8px 15px;
+            border-radius: 30px;
+            font-size: 13px;
+            margin-bottom: 20px;
+        }
+
+        .hero-text h1 {
+            font-size: clamp(42px, 6vw, 70px);
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .hero-text h1 span {
+            color: var(--primary);
+        }
+
+        .hero-text h3 {
+            color: var(--text);
+            font-size: 23px;
+            margin-bottom: 20px;
+        }
+
+        .hero-text p {
+            color: var(--muted);
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+        }
+
+        .profile-card {
+            width: 320px;
+            height: 380px;
+            border-radius: 25px;
+            border: 1px solid rgba(56,189,248,0.2);
+            background: linear-gradient(145deg, #122239, #0a1525);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 25px 70px rgba(0,0,0,0.3);
+        }
+
+        .profile-card::before {
+            content: "";
+            position: absolute;
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: rgba(56,189,248,0.15);
+            filter: blur(50px);
+        }
+
+        .profile-placeholder {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .profile-placeholder .icon {
+            width: 150px;
+            height: 150px;
+            margin: auto auto 20px;
+            border-radius: 50%;
+            border: 4px solid var(--primary);
+            background: linear-gradient(135deg, #164e63, #0f172a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+        }
+
+        .profile-placeholder h3 {
+            font-size: 22px;
+        }
+
+        .profile-placeholder p {
+            color: var(--primary);
+            font-size: 14px;
+        }
+
+        /* =========================
+           ABOUT SECTION
+        ========================== */
+        .about {
+            background: var(--bg-light);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            color: var(--muted);
+            margin-bottom: 18px;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .stat-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .stat-card h3 {
+            color: var(--primary);
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .stat-card p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        /* =========================
+           EDUCATION SECTION
+        ========================== */
+        .timeline {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .timeline-item {
+            border-left: 2px solid var(--primary);
+            padding: 0 0 35px 30px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -9px;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--primary);
+        }
+
+        .timeline-item .date {
+            color: var(--primary);
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .timeline-item h3 {
+            font-size: 22px;
+            margin: 10px 0;
+        }
+
+        .timeline-item p {
+            color: var(--muted);
+        }
+
+        /* =========================
+           EXPERIENCE SECTION
+        ========================== */
+        .experience {
+            background: var(--bg-light);
+        }
+
+        .experience-card {
+            max-width: 850px;
+            margin: auto;
+            background: var(--card);
+            padding: 35px;
+            border-radius: 18px;
+            border: 1px solid var(--border);
+            transition: 0.3s;
+        }
+
+        .experience-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .experience-card h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .experience-card .role {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .experience-card p {
+            color: var(--muted);
+        }
+
+        /* =========================
+           SKILLS SECTION
+        ========================== */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .skill-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 30px;
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-7px);
+            border-color: var(--primary);
+            box-shadow: 0 15px 35px rgba(56,189,248,0.08);
+        }
+
+        .skill-icon {
+            font-size: 35px;
+            margin-bottom: 20px;
+        }
+
+        .skill-card h3 {
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .skill-card p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        /* =========================
+           PROJECTS SECTION
+        ========================== */
+        .projects {
+            background: var(--bg-light);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .project-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 30px;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .project-card .project-number {
+            color: var(--primary);
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .project-card h3 {
+            font-size: 22px;
+            margin: 15px 0;
+        }
+
+        .project-card p {
+            color: var(--muted);
+        }
+
+        /* =========================
+           CONTACT SECTION
+        ========================== */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-info h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            color: var(--muted);
+            margin-bottom: 25px;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 18px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+        }
+
+        .contact-item .icon {
+            font-size: 24px;
+        }
+
+        .contact-item h4 {
+            font-size: 15px;
+        }
+
+        .contact-item p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .contact-form {
+            background: var(--card);
+            padding: 30px;
+            border-radius: 18px;
+            border: 1px solid var(--border);
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            padding: 15px;
+            border-radius: 10px;
+            color: var(--white);
+            margin-bottom: 15px;
+            font-family: inherit;
+            outline: none;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: var(--primary);
+        }
+
+        .contact-form textarea {
+            height: 140px;
+            resize: vertical;
+        }
+
+        /* =========================
+           FOOTER
+        ========================== */
+        footer {
+            background: #050b14;
+            border-top: 1px solid var(--border);
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        footer p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        footer span {
+            color: var(--primary);
+        }
+
+        /* =========================
+           ANIMATIONS
+        ========================== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: 0.8s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* =========================
+           RESPONSIVE DESIGN
+        ========================== */
+        @media (max-width: 900px) {
+            .hero-content,
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-text {
+                text-align: center;
+            }
+
+            .hero-text p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-visual {
+                margin-top: 30px;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-stats {
+                max-width: 600px;
+                margin: auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 75px;
+                left: 0;
+                width: 100%;
+                background: var(--bg);
+                flex-direction: column;
+                gap: 0;
+                display: none;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 15px 5%;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .section {
+                padding: 75px 0;
+            }
+
+            .section-title h2 {
+                font-size: 30px;
+            }
+
+            .hero-text h1 {
+                font-size: 45px;
+            }
+
+            .hero-text h3 {
+                font-size: 20px;
+            }
+
+            .skills-grid,
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-card {
+                width: 280px;
+                height: 330px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .about-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-text h1 {
+                font-size: 38px;
+            }
+
+            .btn {
+                padding: 12px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <header>
+        <div class="container navbar">
+            <a href="#home" class="logo">Younas<span>.</span></a>
+
+            <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation">
+                ☰
+            </button>
+
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+
+            <div class="hero-text reveal">
+                <div class="badge">Welcome to My Professional Portfolio</div>
+
+                <h1>Hello, I'm <span>Younas Ali</span></h1>
+
+                <h3>Educationist | Academic Manager | Computer Science Teacher | Project Manager</h3>
+
+                <p>
+                    I am passionate about education, technology, academic excellence,
+                    project management, and empowering students through meaningful learning experiences.
+                    My mission is to inspire learners, manage educational initiatives,
+                    and contribute to a better future through knowledge and innovation.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#about" class="btn btn-primary">Explore My Profile</a>
+                    <a href="#contact" class="btn btn-outline">Contact Me</a>
+                </div>
+            </div>
+
+            <div class="hero-visual reveal">
+                <div class="profile-card">
+                    <div class="profile-placeholder">
+                        <div class="icon">👨‍🏫</div>
+                        <h3>Younas Ali</h3>
+                        <p>Education & Technology</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="section about" id="about">
+        <div class="container">
+
+            <div class="section-title reveal">
+                <div class="small-title">About Me</div>
+                <h2>Who I Am</h2>
+                <p>Discover my professional journey, passion, and commitment to excellence.</p>
+            </div>
+
+            <div class="about-grid">
+
+                <div class="about-text reveal">
+                    <h3>Passionate About Education, Technology & Leadership</h3>
+
+                    <p>
+                        I am an Educationist, Academic Manager, Computer Science Teacher,
+                        and Project Manager dedicated to educational development,
+                        academic leadership, and technology-driven learning.
+                    </p>
+
+                    <p>
+                        I believe education is one of the most powerful tools for transforming
+                        individuals and communities. Through effective management,
+                        innovative teaching, and strategic planning, I aim to create
+                        meaningful opportunities for learners.
+                    </p>
+
+                    <p>
+                        My interests include educational innovation, digital learning,
+                        computer science, team leadership, project coordination,
+                        and professional development.
+                    </p>
+
+                    <a href="#contact" class="btn btn-primary">Let's Connect</a>
+                </div>
+
+                <div class="about-stats reveal">
+                    <div class="stat-card">
+                        <h3>Education</h3>
+                        <p>Learning & Development</p>
+                    </div>
+
+                    <div class="stat-card">
+                        <h3>Leadership</h3>
+                        <p>Academic Management</p>
+                    </div>
+
+                    <div class="stat-card">
+                        <h3>Technology</h3>
+                        <p>Computer Science</p>
+                    </div>
+
+                    <div class="stat-card">
+                        <h3>Projects</h3>
+                        <p>Planning & Coordination</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- EDUCATION SECTION -->
+    <section class="section" id="education">
+        <div class="container">
+
+            <div class="section-title reveal">
+                <div class="small-title">My Background</div>
+                <h2>Education</h2>
+                <p>My educational background and academic journey.</p>
+            </div>
+
+            <div class="timeline reveal">
+
+                <div class="timeline-item">
+                    <div class="date">Academic Background</div>
+                    <h3>Higher Education</h3>
+                    <p>
+                        Add your degree, institution, graduation year, and academic achievements here.
+                        Replace this placeholder with your actual educational information.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="date">Professional Learning</div>
+                    <h3>Certifications & Training</h3>
+                    <p>
+                        Add your professional certifications, workshops, training programs,
+                        and relevant qualifications here.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE SECTION -->
+    <section class="section experience" id="experience">
+        <div class="container">
+
+            <div class="section-title reveal">
+                <div class="small-title">Professional Journey</div>
+                <h2>My Experience</h2>
+                <p>My roles, responsibilities, and contributions in education and management.</p>
+            </div>
+
+            <div class="experience-card reveal">
+                <h3>Education & Academic Management</h3>
+
+                <div class="role">
+                    Educationist | Academic Manager | Computer Science Teacher | Project Manager
+                </div>
+
+                <p>
+                    I contribute to educational leadership, academic planning,
+                    classroom instruction, technology integration, team coordination,
+                    project management, and student development.
+                    My focus is on building effective learning environments,
+                    supporting teachers, managing academic activities,
+                    and promoting continuous improvement.
+                </p>
+
+                <p style="margin-top:15px;">
+                    <strong style="color:var(--white);">Note:</strong>
+                    Add your actual organizations, employment dates, positions,
+                    and achievements to personalize this section.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section class="section" id="skills">
+        <div class="container">
+
+            <div class="section-title reveal">
+                <div class="small-title">What I Do</div>
+                <h2>My Professional Skills</h2>
+                <p>Areas of expertise and professional capabilities.</p>
+            </div>
+
+            <div class="skills-grid">
+
+                <div class="skill-card reveal">
+                    <div class="skill-icon">🎓</div>
+                    <h3>Educational Leadership</h3>
+                    <p>
+                        Academic planning, educational administration,
+                        learner development, and institutional improvement.
+                    </p>
+                </div>
+
+                <div class="skill-card reveal">
+                    <div class="skill-icon">📋</div>
+                    <h3>Academic Management</h3>
+                    <p>
+                        Academic coordination, scheduling, classroom monitoring,
+                        teacher support, and educational planning.
+                    </p>
+                </div>
+
+                <div class="skill-card reveal">
+                    <div class="skill-icon">💻</div>
+                    <h3>Computer Science</h3>
+                    <p>
+                        Computer education, digital literacy,
+                        technology awareness, and practical instruction.
+                    </p>
+                </div>
+
+                <div class="skill-card reveal">
+                    <div class="skill-icon">🚀</div>
+                    <h3>Project Management</h3>
+                    <p>
+                        Project planning, coordination, execution,
+                        communication, and team collaboration.
+                    </p>
+                </div>
+
+                <div class="skill-card reveal">
+                    <div class="skill-icon">👨‍🏫</div>
+                    <h3>Teaching & Training</h3>
+                    <p>
+                        Student engagement, lesson planning,
+                        instructional delivery, and skills development.
+                    </p>
+                </div>
+
+                <div class="skill-card reveal">
+                    <div class="skill-icon">🤝</div>
+                    <h3>Team Leadership</h3>
+                    <p>
+                        Team collaboration, communication,
+                        leadership, mentoring, and problem-solving.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section class="section projects" id="projects">
+        <div class="container">
+
+            <div class="section-title reveal">
+                <div class="small-title">My Work</div>
+                <h2>Projects & Initiatives</h2>
+                <p>Educational projects, professional initiatives, and areas of contribution.</p>
+            </div>
+
+            <div class="projects-grid">
+
+                <div class="project-card reveal">
+                    <div class="project-number">PROJECT 01</div>
+                    <h3>Digital Learning Initiative</h3>
+                    <p>
+                        Add details about your digital learning initiatives,
+                        technology-based educational activities,
+                        or student digital skills programs.
+                    </p>
+                </div>
+
+                <div class="project-card reveal">
+                    <div class="project-number">PROJECT 02</div>
+                    <h3>Academic Development</h3>
+                    <p>
+                        Add details about academic improvement initiatives,
+                        curriculum planning, teacher development,
+                        or student performance improvement projects.
+                    </p>
+                </div>
+
+                <div class="project-card reveal">
+                    <div class="project-number">PROJECT 03</div>
+                    <h3>Computer Skills Training</h3>
+                    <p>
+                        Add information about computer training,
+                        technology workshops, digital literacy programs,
+                        and practical skills development.
+                    </p>
+                </div>
+
+                <div class="project-card reveal">
+                    <div class="project-number">PROJECT 04</div>
+                    <h3>Educational Management</h3>
+                    <p>
+                        Add details about educational projects,
+                        academic operations, team management,
+                        and organizational development.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="section" id="contact">
+        <div class="container">
+
+            <div class="section-title reveal">
+                <div class="small-title">Get In Touch</div>
+                <h2>Contact Me</h2>
+                <p>Let's connect, collaborate, and create meaningful opportunities.</p>
+            </div>
+
+            <div class="contact-grid">
+
+                <div class="contact-info reveal">
+                    <h3>Let's Start a Conversation</h3>
+
+                    <p>
+                        If you are interested in educational collaboration,
+                        academic development, technology training,
+                        project management, or professional opportunities,
+                        feel free to reach out.
+                    </p>
+
+                    <div class="contact-item">
+                        <div class="icon">📧</div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>Add your email address</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="icon">📱</div>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>Add your phone number</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="icon">📍</div>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Add your city or location</p>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="contact-form reveal" id="contactForm">
+                    <input type="text" id="name" placeholder="Your Name" required>
+                    <input type="email" id="email" placeholder="Your Email" required>
+                    <input type="text" id="subject" placeholder="Subject" required>
+                    <textarea id="message" placeholder="Your Message" required></textarea>
+
+                    <button type="submit" class="btn btn-primary">
+                        Send Message
+                    </button>
+                </form>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>
+                © <span id="year"></span> Younas Ali.
+                Designed with <span>♥</span> for Education & Innovation.
+            </p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // Mobile Navigation
+        const menuBtn = document.getElementById("menuBtn");
+        const navLinks = document.getElementById("navLinks");
+
+        menuBtn.addEventListener("click", function () {
+            navLinks.classList.toggle("active");
+        });
+
+        // Close Mobile Menu After Clicking a Link
+        document.querySelectorAll(".nav-links a").forEach(function (link) {
+            link.addEventListener("click", function () {
+                navLinks.classList.remove("active");
+            });
+        });
+
+        // Automatically Update Copyright Year
+        document.getElementById("year").textContent = new Date().getFullYear();
+
+        // Scroll Reveal Animation
+        const revealElements = document.querySelectorAll(".reveal");
+
+        const observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                }
+            });
+        }, {
+            threshold: 0.12
+        });
+
+        revealElements.forEach(function (element) {
+            observer.observe(element);
+        });
+
+        // Contact Form: Open Email Application
+        document.getElementById("contactForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const subject = document.getElementById("subject").value;
+            const message = document.getElementById("message").value;
+
+            const recipient = "your-email@example.com";
+
+            const emailBody =
+                "Name: " + name + "\n" +
+                "Email: " + email + "\n\n" +
+                "Message:\n" + message;
+
+            const mailtoLink =
+                "mailto:" + recipient +
+                "?subject=" + encodeURIComponent(subject) +
+                "&body=" + encodeURIComponent(emailBody);
+
+            window.location.href = mailtoLink;
+        });
+    </script>
+
+</body>
+</html>
